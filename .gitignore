@@ -1,0 +1,36 @@
+# Dependency directories (Never commit these, they are too large)
+node_modules/
+jspm_packages/
+web_modules/
+
+# Local env files that contain sensitive secrets (API keys, database passwords)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Diagnostic reports (Crashed Node.js processes)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Mac and Windows OS system files
+.DS_Store
+Thumbs.db
+
+# Build/Dist directories (uncomment if you use TypeScript or a bundler like Vite/Webpack)
+# dist/
+# build/

@@ -1,0 +1,19 @@
+{
+    "name": "live-leaderboard",
+    "version": "1.0.0",
+    "description": "A live leaderboard application using Redis and Node.js",
+    "main": "index.js",
+    "type":"module",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node src/server.js"
+    },
+    "keywords": [],
+    "author": "Dev Doshi",
+    "license": "ISC",
+    "dependencies": {
+        "bullmq": "^5.4.2",
+        "express": "^4.18.3",
+        "ioredis": "^5.4.1"
+    }
+}
