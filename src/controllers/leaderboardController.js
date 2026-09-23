@@ -1,5 +1,4 @@
 // controllers/leaderboardController.js
-import e from "express";
 import redis from "../config/redisClient.js";
 import { LEADERBOARD_KEY } from "../constants/keys.js";
 
@@ -81,10 +80,4 @@ export async function getUserRank(req, res) {
         console.error(error);
         res.status(500).json({ message: "Failed to fetch user rank" });
     }
-}
-
-export default {
-    addScore,
-    getLeaderboard,
-    getUserRank
 }

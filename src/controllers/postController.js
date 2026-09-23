@@ -1,11 +1,11 @@
 import redis from "../config/redisClient.js";
-import { LEADERBOARD_KEY } from "../constants/keys.js";
+import { getPostViewsKey } from "../constants/keys.js";
 export async function postviews(req,res){
    
     try{
         const postId = req.params.id ;
     
-        const views = await redis.incr(getKey(postId));
+        const views = await redis.incr(getPostViewsKey(postId));
 
         res.status(200).json({
             post:postId,
@@ -19,5 +19,3 @@ export async function postviews(req,res){
     }
 
 }
- 
-export default postviews;
