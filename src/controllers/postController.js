@@ -17,5 +17,4 @@ export async function postviews(req,res){
             message:"A view, request failed"
         })
     }
-
 }
