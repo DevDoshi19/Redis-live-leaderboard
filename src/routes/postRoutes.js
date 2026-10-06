@@ -1,9 +1,11 @@
-// routes/leaderboardRoutes.js
+// routes/postRoutes.js
 import { Router } from "express";
-import { postviews } from "../controllers/postController.js";
+import { testrouter,postviews ,createPost } from "../controllers/postController.js";
 
 const router = Router();
 
-router.post("/:id/view", postviews);
+router.post("/test", testrouter);
+router.post("/:id/view/:userid", postviews);
+router.post("/:id", createPost);
 
 export default router;

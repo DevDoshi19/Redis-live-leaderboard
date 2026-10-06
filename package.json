@@ -6,7 +6,8 @@
     "type": "module",
     "scripts": {
         "start": "node index.js",
-        "dev": "node --watch src/index.js"
+        "dev": "node --watch src/index.js",
+        "worker": "node src/workers/leaderboardWorker.js"
     },
     "keywords": [],
     "author": "Dev Doshi",
