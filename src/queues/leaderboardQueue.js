@@ -5,4 +5,7 @@ const connection = {
     port : 6379
 }
 
-export const leaderboardQueue = new Queue("author-scores", { connection });
+export const leaderboardQueue = new Queue(
+    "author-scores", 
+    { connection }
+);

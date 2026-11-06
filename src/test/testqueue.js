@@ -6,4 +6,12 @@ await leaderboardQueue.add("award-point", {
 });
 
 console.log("Fresh job added");
+// process.exit(0);
+
+await leaderboardQueue.add("award-point", {
+    authorId: "durability_test_01",
+    postId: "post_9002"
+});
+
+console.log("Durability test job added");
 process.exit(0);

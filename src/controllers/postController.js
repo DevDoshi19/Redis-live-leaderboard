@@ -16,6 +16,13 @@ export async function postviews(req,res){
         const isViewed = await redis.set(`post:${postId}:viewed:${userId}`,"true",'EX',86400,'NX');
         if(isViewed === "OK"){
             views = await redis.incr(getPostViewsKey(postId));
+            const meta = await redis.hgetall(getPostMetaKey(postId));
+            // console.log("Post metadata:", meta);
+            console.log("Author ID:", meta.authorId);
+            await leaderboardQueue.add("award-point", {
+                authorId: meta.authorId,
+                postId
+            });
         }else{
             views = await redis.get(getPostViewsKey(postId));
         }
@@ -49,7 +56,7 @@ export async function createPost(req,res){
             authorId,
             title:title||"Untitled Post",
         })
-
+        
         res.status(201).json({
             message:"Post created successfully",
             postId:postId,
